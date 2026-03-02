@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
     <title>Signal31</title>
@@ -7,5 +7,54 @@
     <h1>Welcome to Signal31.io</h1>
     <p>This site is under construction.</p>
     <p>Check back soon for updates!!</p>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Signal31</title>
+  <style>
+    #message {
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 50px;
+      transition: opacity 0.5s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="message"></div>
+
+  <script>
+    const messages = [
+      "Welcome to signal31!",
+      "¡Bienvenido a signal31!",
+      "Bienvenue sur signal31 !"
+    ];
+
+    const messageElement = document.getElementById("message");
+    let index = 0;
+
+    function showNextMessage() {
+      messageElement.style.opacity = 0;
+
+      setTimeout(() => {
+        messageElement.textContent = messages[index];
+        messageElement.style.opacity = 1;
+        index = (index + 1) % messages.length;
+      }, 500);
+    }
+
+    // Initial message
+    showNextMessage();
+
+    // Change message every 3 seconds
+    setInterval(showNextMessage, 3000);
+  </script>
+
 </body>
 </html>
